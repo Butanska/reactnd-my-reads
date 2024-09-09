@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Rubik:wght@300;400;500;600;700&display=swap"); // import Rubik font for body and Righteous for logo font
+:root {
+  --black: hsl(0, 0%, 12%);
+  --purple-blue: hsl(223, 100%, 63%);
+  --white: hsl(0, 0%, 94%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-bottom: 9rem;
+}
+a,
+a:hover,
+a:visited,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+//Header
+.header {
+  width: 100%;
+  min-height: 75px;
+  background-color: var(--black);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  .logo {
+    font-family: "Righteous", cursive;
+    color: hsl(0, 0%, 100%);
+  }
+}
+// floating Link
+.add-book {
+  position: fixed;
+  background-color: var(--purple-blue);
+  width: 3rem;
+  height: 3rem;
+  bottom: 4.5rem;
+  right: 3rem;
+  border-radius: 50%;
+  z-index: 1;
+  .link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2rem;
+  }
+}
+
+.shelf {
+  color: var(--black);
+  .shelf-title {
+    margin-top: 2rem;
+    padding-left: 0.5rem;
+    border-left: 0.4rem solid var(--purple-blue);
+  }
+  .books-container {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 160px));
+    gap: 1.7rem;
+  }
+}
+.book-card {
+  img {
+    background-color: var(--purple-blue);
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+  }
+  .shelf-status {
+    padding: 0.5rem;
+    background-color: var(--purple-blue);
+    color: white;
+    width: 100%;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 0.2rem;
+    text-transform: capitalize;
+    option {
+      display: block;
+      padding-top: 10px;
+      &:hover {
+        color: var(--purple-blue);
+        background-color: #fff;
+      }
+    }
+  }
+  .book-title {
+    margin-top: 0.5rem;
+    font-weight: 400;
+  }
+  .book-author {
+    display: block;
+    color: #787878;
+    margin-top: 0.2rem;
+  }
+}
+
+// Search page
+.search-container {
+  margin: 1.5rem auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .search-bar {
+    display: inline-block;
+    width: 80%;
+    padding: 0.3rem 0.5rem;
+    max-width: 600px;
+    border: 1px solid #22222288;
+    font-size: 1.3rem;
+    border-radius: 5px;
+  }
+
+  .back-link {
+    display: flex;
+    font-size: 2rem;
+    line-height: 0;
+    color: var(--purple-blue);
+  }
+}
+
+.icon-holder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .search-icon {
+    font-size: 10rem;
+    opacity: 0.2;
+  }
+}
+.loading {
+  font-weight: 400;
+  color: #777;
+}
+
+// Page Not Found
+.not-found {
+  background: green;
+  color: var(--white);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 0;
+  .error-404 {
+    font-size: 10rem;
+  }
+  .text {
+    font-weight: 400;
+  }
+  .link {
+    margin-top: 1rem;
+    text-decoration: underline;
+  }
+}
+
